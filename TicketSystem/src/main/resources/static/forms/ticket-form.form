@@ -1,0 +1,227 @@
+{
+  "components": [
+    {
+      "text": "# SME Retailer IT Support Form\n",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_1e4uoj8",
+        "columns": null
+      },
+      "id": "Field_1xr63w6"
+    },
+    {
+      "label": "First Name",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0hea35u",
+        "columns": null
+      },
+      "id": "Field_1geifnf",
+      "key": "ticketFName",
+      "validate": {
+        "required": true,
+        "maxLength": 20,
+        "minLength": 2
+      }
+    },
+    {
+      "label": "Surname",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0hea35u",
+        "columns": null
+      },
+      "id": "Field_1a7bf6f",
+      "key": "ticketSurname",
+      "validate": {
+        "required": true,
+        "minLength": 2,
+        "maxLength": 50
+      }
+    },
+    {
+      "label": "Email address",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1mrm46l",
+        "columns": null
+      },
+      "id": "Field_1skcyst",
+      "key": "ticketEmail",
+      "validate": {
+        "required": true,
+        "validationType": "email"
+      }
+    },
+    {
+      "values": [
+        {
+          "label": "Department 1",
+          "value": "ticketDep1"
+        },
+        {
+          "label": "Department 2",
+          "value": "ticketDep2"
+        },
+        {
+          "label": "Department 3",
+          "value": "ticketDep3"
+        }
+      ],
+      "label": "Department",
+      "type": "select",
+      "layout": {
+        "row": "Row_1qxtn6i",
+        "columns": null
+      },
+      "id": "Field_1v11fss",
+      "key": "ticketDepartment",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "values": [
+        {
+          "label": "Value",
+          "value": "value"
+        }
+      ],
+      "label": "Manager",
+      "type": "select",
+      "layout": {
+        "row": "Row_1qxtn6i",
+        "columns": null
+      },
+      "id": "Field_0sem6pc",
+      "key": "ticketManager",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "values": [
+        {
+          "label": "PC",
+          "value": "ticketIssuePC"
+        },
+        {
+          "label": "Laptop",
+          "value": "ticketIssueLaptop"
+        },
+        {
+          "label": "Phone",
+          "value": "ticketIssuePhone"
+        },
+        {
+          "label": "Monitor",
+          "value": "ticketIssueMonitor"
+        },
+        {
+          "label": "Other",
+          "value": "ticketIssueOther"
+        }
+      ],
+      "label": "Please select an option that best describes your issue:",
+      "type": "checklist",
+      "layout": {
+        "row": "Row_0nazye6",
+        "columns": null
+      },
+      "id": "Field_0aap9bm",
+      "key": "ticketIssueList",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "values": [
+        {
+          "label": "Low",
+          "value": "ticketEffectLow"
+        },
+        {
+          "label": "Medium",
+          "value": "ticketEffectMedium"
+        },
+        {
+          "label": "High",
+          "value": "ticketEffectHigh"
+        }
+      ],
+      "label": "Effect",
+      "type": "select",
+      "layout": {
+        "row": "Row_07gjxim",
+        "columns": null
+      },
+      "id": "Field_0941i9c",
+      "key": "ticketEffect",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "values": [
+        {
+          "label": "Low",
+          "value": "ticketEffectLow"
+        },
+        {
+          "label": "Medium",
+          "value": "ticketEffectMedium"
+        },
+        {
+          "label": "High",
+          "value": "ticketEffectHigh"
+        }
+      ],
+      "label": "Priority",
+      "type": "select",
+      "layout": {
+        "row": "Row_07gjxim",
+        "columns": null
+      },
+      "id": "Field_0k2p2m3",
+      "key": "ticketPriority",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Please describe the problem, provide as much detail as possible:",
+      "type": "textarea",
+      "layout": {
+        "row": "Row_0acgpjg",
+        "columns": null
+      },
+      "id": "Field_0qkqt95",
+      "key": "ticketDesc",
+      "validate": {
+        "required": true,
+        "minLength": 10
+      }
+    },
+    {
+      "action": "submit",
+      "label": "Submit",
+      "type": "button",
+      "layout": {
+        "row": "Row_0q389eo",
+        "columns": null
+      },
+      "id": "Field_0penv0b",
+      "key": "field_147b5i0"
+    }
+  ],
+  "type": "default",
+  "id": "Form_192soq3",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.15.1"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.19.0",
+  "schemaVersion": 10
+}
