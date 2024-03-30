@@ -1,0 +1,122 @@
+{
+  "components": [
+    {
+      "text": "# Ticket amendments form",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_0yxb1xr",
+        "columns": null
+      },
+      "id": "Field_1c6n2yt"
+    },
+    {
+      "label": "Ticket ID:",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0s23x9y",
+        "columns": null
+      },
+      "id": "Field_0sa1vdl",
+      "key": "amendID",
+      "validate": {
+        "required": true
+      },
+      "defaultValue": "null"
+    },
+    {
+      "values": [
+        {
+          "label": "null",
+          "value": "null"
+        },
+        {
+          "label": "Low",
+          "value": "Low"
+        },
+        {
+          "label": "Medium",
+          "value": "Medium"
+        },
+        {
+          "label": "High",
+          "value": "High"
+        }
+      ],
+      "label": "Effect (leave as null to not change)",
+      "type": "select",
+      "layout": {
+        "row": "Row_02qr3hb",
+        "columns": null
+      },
+      "id": "Field_0uof0bq",
+      "key": "amendEffect",
+      "validate": {
+        "required": true
+      },
+      "defaultValue": "null"
+    },
+    {
+      "values": [
+        {
+          "label": "null",
+          "value": "null"
+        },
+        {
+          "label": "Low",
+          "value": "Low"
+        },
+        {
+          "label": "Medium",
+          "value": "Medium"
+        },
+        {
+          "label": "High",
+          "value": "High"
+        }
+      ],
+      "label": "Priority (leave as null to not change)",
+      "type": "select",
+      "layout": {
+        "row": "Row_0kt0x5g",
+        "columns": null
+      },
+      "id": "Field_0u2fy5c",
+      "key": "amendPriority",
+      "validate": {
+        "required": true
+      },
+      "defaultValue": "null"
+    },
+    {
+      "label": "Add any additional information:",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1eo7o4l",
+        "columns": null
+      },
+      "id": "Field_0qwklzh",
+      "key": "amendDesc"
+    },
+    {
+      "action": "submit",
+      "label": "Submit",
+      "type": "button",
+      "layout": {
+        "row": "Row_11y3mnt",
+        "columns": null
+      },
+      "id": "Field_0bm7h5g",
+      "key": "field_1y6joxg"
+    }
+  ],
+  "type": "default",
+  "id": "Form_0ddo6ov",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.15.1"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.20.0",
+  "schemaVersion": 10
+}
