@@ -29,7 +29,7 @@
       "label": "Surname",
       "type": "textfield",
       "layout": {
-        "row": "Row_0hea35u",
+        "row": "Row_1xprkgy",
         "columns": null
       },
       "id": "Field_1a7bf6f",
@@ -50,8 +50,7 @@
       "id": "Field_1skcyst",
       "key": "ticketEmail",
       "validate": {
-        "required": true,
-        "validationType": "email"
+        "required": true
       }
     },
     {
@@ -91,7 +90,7 @@
       "label": "Manager",
       "type": "select",
       "layout": {
-        "row": "Row_1qxtn6i",
+        "row": "Row_0gftks4",
         "columns": null
       },
       "id": "Field_0sem6pc",
@@ -130,24 +129,24 @@
         "columns": null
       },
       "id": "Field_0aap9bm",
-      "key": "ticketIssueList",
+      "key": "ticketIssue",
       "validate": {
-        "required": true
+        "required": false
       }
     },
     {
       "values": [
         {
           "label": "Low",
-          "value": "ticketEffectLow"
+          "value": "Low"
         },
         {
           "label": "Medium",
-          "value": "ticketEffectMedium"
+          "value": "Medium"
         },
         {
           "label": "High",
-          "value": "ticketEffectHigh"
+          "value": "High"
         }
       ],
       "label": "Effect",
@@ -166,21 +165,21 @@
       "values": [
         {
           "label": "Low",
-          "value": "ticketEffectLow"
+          "value": "Low"
         },
         {
           "label": "Medium",
-          "value": "ticketEffectMedium"
+          "value": "Medium"
         },
         {
           "label": "High",
-          "value": "ticketEffectHigh"
+          "value": "High"
         }
       ],
       "label": "Priority",
       "type": "select",
       "layout": {
-        "row": "Row_07gjxim",
+        "row": "Row_165597b",
         "columns": null
       },
       "id": "Field_0k2p2m3",
@@ -191,16 +190,15 @@
     },
     {
       "label": "Please describe the problem, provide as much detail as possible:",
-      "type": "textarea",
+      "type": "textfield",
       "layout": {
-        "row": "Row_0acgpjg",
+        "row": "Row_1m9losg",
         "columns": null
       },
-      "id": "Field_0qkqt95",
+      "id": "Field_1pe4jfk",
       "key": "ticketDesc",
       "validate": {
-        "required": true,
-        "minLength": 10
+        "required": true
       }
     },
     {
@@ -222,6 +220,6 @@
     "version": "5.15.1"
   },
   "executionPlatform": "Camunda Platform",
-  "executionPlatformVersion": "7.19.0",
+  "executionPlatformVersion": "7.20.0",
   "schemaVersion": 10
 }

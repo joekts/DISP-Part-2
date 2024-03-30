@@ -1,0 +1,84 @@
+{
+  "components": [
+    {
+      "text": "# Resolution satisfaction",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_0w76hfj",
+        "columns": null
+      },
+      "id": "Field_0ekkk6v"
+    },
+    {
+      "label": "Ticket ID:",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1ep7i1q",
+        "columns": null
+      },
+      "id": "Field_0as20fp",
+      "key": "evaluateID",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "values": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No"
+        }
+      ],
+      "label": "Are you satisfied with the resolution that you have been given?",
+      "type": "select",
+      "layout": {
+        "row": "Row_0dpstlg",
+        "columns": null
+      },
+      "id": "Field_14i7yka",
+      "key": "evaluate",
+      "validate": {
+        "required": true
+      },
+      "defaultValue": "Yes"
+    },
+    {
+      "label": "Please detail why you are not satsified so that we can reattempt a resolution:",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_15nshik",
+        "columns": null
+      },
+      "id": "Field_14equnx",
+      "key": "evaluateDesc",
+      "conditional": {
+        "hide": "=evaluate = \"Yes\" or \"<none>\""
+      }
+    },
+    {
+      "action": "submit",
+      "label": "Submit",
+      "type": "button",
+      "layout": {
+        "row": "Row_07e7m0e",
+        "columns": null
+      },
+      "id": "Field_0kvqy8u",
+      "key": "field_15pp65n"
+    }
+  ],
+  "type": "default",
+  "id": "Form_00ah0nz",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.15.1"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.19.0",
+  "schemaVersion": 10
+}
