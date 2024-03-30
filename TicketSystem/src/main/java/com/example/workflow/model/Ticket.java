@@ -12,6 +12,7 @@ public class Ticket {
     private String ticketPriority;
     private String ticketDesc;
     private String ticketStatus;
+    private String ticketAssignee;
 
     //First name getter and setter
     public String getTicketFName() {
@@ -96,5 +97,13 @@ public class Ticket {
     }
     public void setTicketStatus(String status){
         this.ticketStatus = status;
+    }
+
+    //Assignee getter and setter
+    public String getTicketAssignee(){
+        return ticketAssignee;
+    }
+    public void setTicketAssignee(String assignee){
+        this.ticketAssignee = assignee;
     }
 }
