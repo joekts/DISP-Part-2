@@ -1,16 +1,6 @@
 {
   "components": [
     {
-      "text": "# Request for additional information",
-      "label": "Text view",
-      "type": "text",
-      "layout": {
-        "row": "Row_1tvnih8",
-        "columns": null
-      },
-      "id": "Field_0f8jwu2"
-    },
-    {
       "label": "Ticket ID:",
       "type": "textfield",
       "layout": {

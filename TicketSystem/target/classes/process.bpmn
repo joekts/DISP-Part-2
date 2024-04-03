@@ -89,7 +89,7 @@
     <bpmn:startEvent id="StartEvent_1" name="User has an issue">
       <bpmn:outgoing>Flow_1ssgrfu</bpmn:outgoing>
     </bpmn:startEvent>
-    <bpmn:userTask id="Activity_1udjspl" name="User submits a ticket using the form" camunda:formRef="ticket-form" camunda:formRefBinding="deployment">
+    <bpmn:userTask id="Activity_1udjspl" name="User submits a ticket using the form" camunda:formRef="ticket" camunda:formRefBinding="deployment">
       <bpmn:extensionElements />
       <bpmn:incoming>Flow_1ssgrfu</bpmn:incoming>
       <bpmn:outgoing>Flow_1wv7yoo</bpmn:outgoing>
@@ -115,7 +115,7 @@
       <bpmn:incoming>Flow_09gc9t6</bpmn:incoming>
       <bpmn:outgoing>Flow_1nfgaoo</bpmn:outgoing>
     </bpmn:exclusiveGateway>
-    <bpmn:userTask id="Activity_0el2kfo" name="Desk Manager Assigns tickets" camunda:formRef="assign-form" camunda:formRefBinding="latest">
+    <bpmn:userTask id="Activity_0el2kfo" name="Desk Manager Assigns tickets" camunda:formRef="assign" camunda:formRefBinding="latest">
       <bpmn:incoming>Flow_1nfgaoo</bpmn:incoming>
       <bpmn:outgoing>Flow_16s1agc</bpmn:outgoing>
     </bpmn:userTask>
@@ -139,7 +139,7 @@
       <bpmn:outgoing>Flow_1rp0l05</bpmn:outgoing>
     </bpmn:manualTask>
     <bpmn:dataStoreReference id="DataStoreReference_1nrpaje" name="Ticket Database" />
-    <bpmn:userTask id="Activity_1abwmdw" name="User provides additional information" camunda:formRef="additional-form" camunda:formRefBinding="latest">
+    <bpmn:userTask id="Activity_1abwmdw" name="User provides additional information" camunda:formRef="additional" camunda:formRefBinding="latest">
       <bpmn:incoming>Flow_1rp0l05</bpmn:incoming>
       <bpmn:outgoing>Flow_0dm9ugd</bpmn:outgoing>
     </bpmn:userTask>
@@ -193,7 +193,7 @@
       <bpmn:incoming>Flow_1b8ma6j</bpmn:incoming>
       <bpmn:outgoing>Flow_1ua61jj</bpmn:outgoing>
     </bpmn:manualTask>
-    <bpmn:userTask id="Activity_0ydmz68" name="End user evaluates resolution" camunda:formRef="evaluate-form" camunda:formRefBinding="latest">
+    <bpmn:userTask id="Activity_0ydmz68" name="End user evaluates resolution" camunda:formRef="evaluate" camunda:formRefBinding="latest">
       <bpmn:incoming>Flow_1ua61jj</bpmn:incoming>
       <bpmn:outgoing>Flow_1y0f1dp</bpmn:outgoing>
     </bpmn:userTask>
@@ -276,7 +276,7 @@
       </bpmn:dataOutputAssociation>
     </bpmn:userTask>
     <bpmn:dataStoreReference id="DataStoreReference_0sc4535" name="Survey database" />
-    <bpmn:userTask id="Activity_1709bof" name="Desk Manager fixes and amends ticket" camunda:formRef="amend-form" camunda:formRefBinding="latest">
+    <bpmn:userTask id="Activity_1709bof" name="Desk Manager fixes and amends ticket" camunda:formRef="amend" camunda:formRefBinding="deployment">
       <bpmn:incoming>Flow_0aicoz9</bpmn:incoming>
       <bpmn:outgoing>Flow_09gc9t6</bpmn:outgoing>
     </bpmn:userTask>

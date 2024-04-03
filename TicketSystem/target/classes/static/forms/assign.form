@@ -1,0 +1,12 @@
+{
+  "components": [],
+  "type": "default",
+  "id": "assign",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.21.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.20.0",
+  "schemaVersion": 15
+}

@@ -1,16 +1,6 @@
 {
   "components": [
     {
-      "text": "# Ticket amendments form",
-      "label": "Text view",
-      "type": "text",
-      "layout": {
-        "row": "Row_0yxb1xr",
-        "columns": null
-      },
-      "id": "Field_1c6n2yt"
-    },
-    {
       "label": "Ticket ID:",
       "type": "textfield",
       "layout": {
