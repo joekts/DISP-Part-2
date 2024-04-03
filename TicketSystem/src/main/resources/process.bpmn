@@ -89,7 +89,7 @@
     <bpmn:startEvent id="StartEvent_1" name="User has an issue">
       <bpmn:outgoing>Flow_1ssgrfu</bpmn:outgoing>
     </bpmn:startEvent>
-    <bpmn:userTask id="Activity_1udjspl" name="User submits a ticket using the form" camunda:formRef="ticket-form" camunda:formRefBinding="deployment">
+    <bpmn:userTask id="Activity_1udjspl" name="User submits a ticket using the form" camunda:formRef="ticket" camunda:formRefBinding="deployment">
       <bpmn:extensionElements />
       <bpmn:incoming>Flow_1ssgrfu</bpmn:incoming>
       <bpmn:outgoing>Flow_1wv7yoo</bpmn:outgoing>
