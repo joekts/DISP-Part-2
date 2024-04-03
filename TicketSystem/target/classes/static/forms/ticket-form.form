@@ -1,16 +1,6 @@
 {
   "components": [
     {
-      "text": "# SME Retailer IT Support Form\n",
-      "label": "Text view",
-      "type": "text",
-      "layout": {
-        "row": "Row_1e4uoj8",
-        "columns": null
-      },
-      "id": "Field_1xr63w6"
-    },
-    {
       "label": "First Name",
       "type": "textfield",
       "layout": {
@@ -200,26 +190,15 @@
       "validate": {
         "required": true
       }
-    },
-    {
-      "action": "submit",
-      "label": "Submit",
-      "type": "button",
-      "layout": {
-        "row": "Row_0q389eo",
-        "columns": null
-      },
-      "id": "Field_0penv0b",
-      "key": "field_147b5i0"
     }
   ],
   "type": "default",
   "id": "ticket-form",
   "exporter": {
     "name": "Camunda Modeler",
-    "version": "5.15.1"
+    "version": "5.21.0"
   },
   "executionPlatform": "Camunda Platform",
   "executionPlatformVersion": "7.20.0",
-  "schemaVersion": 10
+  "schemaVersion": 15
 }
