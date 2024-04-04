@@ -26,17 +26,6 @@
         "required": true,
         "minLength": 10
       }
-    },
-    {
-      "action": "submit",
-      "label": "Submit",
-      "type": "button",
-      "layout": {
-        "row": "Row_1fbrftj",
-        "columns": null
-      },
-      "id": "Field_1xv5lp1",
-      "key": "field_1npoiqu"
     }
   ],
   "type": "default",

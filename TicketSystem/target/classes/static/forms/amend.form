@@ -1,16 +1,6 @@
 {
   "components": [
     {
-      "text": "# Ticket amendments form",
-      "label": "Text view",
-      "type": "text",
-      "layout": {
-        "row": "Row_0yxb1xr",
-        "columns": null
-      },
-      "id": "Field_1c6n2yt"
-    },
-    {
       "label": "Ticket ID:",
       "type": "textfield",
       "layout": {
@@ -97,17 +87,6 @@
       },
       "id": "Field_0qwklzh",
       "key": "amendDesc"
-    },
-    {
-      "action": "submit",
-      "label": "Submit",
-      "type": "button",
-      "layout": {
-        "row": "Row_11y3mnt",
-        "columns": null
-      },
-      "id": "Field_0bm7h5g",
-      "key": "field_1y6joxg"
     }
   ],
   "type": "default",

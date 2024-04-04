@@ -1,0 +1,53 @@
+{
+  "components": [
+    {
+      "values": [
+        {
+          "label": "I confirm I have read through the tickket",
+          "value": "readYes"
+        }
+      ],
+      "label": "Please tick below to confirm you have read through the ticket",
+      "type": "radio",
+      "layout": {
+        "row": "Row_0r5xqmf",
+        "columns": null
+      },
+      "id": "Field_14fm5k0",
+      "key": "radio_dyfvsi",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "values": [
+        {
+          "label": "No",
+          "value": "No"
+        },
+        {
+          "label": "Yes",
+          "value": "Yes"
+        }
+      ],
+      "label": "If the ticket needs amendments please select 'Yes' below",
+      "type": "select",
+      "layout": {
+        "row": "Row_034h0qb",
+        "columns": null
+      },
+      "id": "Field_1vpkza2",
+      "key": "amendSelect",
+      "defaultValue": "amendNo"
+    }
+  ],
+  "type": "default",
+  "id": "Form_0nyjww7",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.21.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.20.0",
+  "schemaVersion": 15
+}

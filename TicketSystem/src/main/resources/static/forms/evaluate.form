@@ -49,17 +49,6 @@
       "conditional": {
         "hide": "=evaluate = \"Yes\" or \"<none>\""
       }
-    },
-    {
-      "action": "submit",
-      "label": "Submit",
-      "type": "button",
-      "layout": {
-        "row": "Row_07e7m0e",
-        "columns": null
-      },
-      "id": "Field_0kvqy8u",
-      "key": "field_15pp65n"
     }
   ],
   "type": "default",

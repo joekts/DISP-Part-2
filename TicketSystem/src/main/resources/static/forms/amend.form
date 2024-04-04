@@ -87,17 +87,6 @@
       },
       "id": "Field_0qwklzh",
       "key": "amendDesc"
-    },
-    {
-      "action": "submit",
-      "label": "Submit",
-      "type": "button",
-      "layout": {
-        "row": "Row_11y3mnt",
-        "columns": null
-      },
-      "id": "Field_0bm7h5g",
-      "key": "field_1y6joxg"
     }
   ],
   "type": "default",

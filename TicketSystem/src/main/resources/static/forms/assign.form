@@ -1,5 +1,30 @@
 {
-  "components": [],
+  "components": [
+    {
+      "values": [
+        {
+          "label": "Employee 1",
+          "value": "employee1"
+        },
+        {
+          "label": "Employee 2",
+          "value": "employee2"
+        },
+        {
+          "label": "Employee 3",
+          "value": "employee3"
+        }
+      ],
+      "label": "Assignee",
+      "type": "select",
+      "layout": {
+        "row": "Row_0s8pmx0",
+        "columns": null
+      },
+      "id": "Field_0japksy",
+      "key": "assignee"
+    }
+  ],
   "type": "default",
   "id": "assign",
   "exporter": {

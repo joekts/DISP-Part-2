@@ -73,8 +73,16 @@
     {
       "values": [
         {
-          "label": "Value",
-          "value": "value"
+          "label": "Manager 1",
+          "value": "manager1"
+        },
+        {
+          "label": "Manager 2",
+          "value": "manager2"
+        },
+        {
+          "label": "Manager 3",
+          "value": "manager3"
         }
       ],
       "label": "Manager",

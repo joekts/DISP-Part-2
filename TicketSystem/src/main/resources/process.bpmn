@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_19ah8ed" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.21.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.20.0">
   <bpmn:collaboration id="Collaboration_1u8u2r8">
-    <bpmn:participant id="Participant_1f2ddo4" name="SME Retailer" processRef="Process_0mve9yu" />
+    <bpmn:participant id="Participant_1f2ddo4" name="SME Retailer" processRef="TicketSystem" />
+    <bpmn:textAnnotation id="TextAnnotation_0e680yv">
+      <bpmn:text>Desk manager will confirm he has read through the ticket and then selects if it needs amending</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_01by8g4" associationDirection="None" sourceRef="Activity_0cnu8tp" targetRef="TextAnnotation_0e680yv" />
   </bpmn:collaboration>
-  <bpmn:process id="Process_0mve9yu" isExecutable="true" camunda:historyTimeToLive="180">
+  <bpmn:process id="TicketSystem" name="TicketSystem Process" isExecutable="true" camunda:historyTimeToLive="180">
     <bpmn:laneSet id="LaneSet_1ta8v7h">
       <bpmn:lane id="Lane_1jjr7nu">
         <bpmn:flowNodeRef>StartEvent_1</bpmn:flowNodeRef>
@@ -56,32 +60,32 @@
         </bpmn:childLaneSet>
       </bpmn:lane>
       <bpmn:lane id="Lane_1n047ir" name="IT Department">
-        <bpmn:flowNodeRef>Activity_0cnu8tp</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Gateway_0vlvcef</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Gateway_11d4wll</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_0el2kfo</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Activity_11swor9</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Gateway_01rehea</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Gateway_0qfwvb9</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_1d8ashr</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_1kovwhg</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_1waw1qa</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_1709bof</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_0cnu8tp</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_11swor9</bpmn:flowNodeRef>
         <bpmn:childLaneSet id="LaneSet_0tt4flu">
           <bpmn:lane id="Lane_190nisk" name="Desk Manager">
-            <bpmn:flowNodeRef>Activity_0cnu8tp</bpmn:flowNodeRef>
             <bpmn:flowNodeRef>Gateway_0vlvcef</bpmn:flowNodeRef>
             <bpmn:flowNodeRef>Gateway_11d4wll</bpmn:flowNodeRef>
             <bpmn:flowNodeRef>Activity_0el2kfo</bpmn:flowNodeRef>
             <bpmn:flowNodeRef>Activity_1709bof</bpmn:flowNodeRef>
+            <bpmn:flowNodeRef>Activity_0cnu8tp</bpmn:flowNodeRef>
           </bpmn:lane>
           <bpmn:lane id="Lane_0ixee9v" name="Staff Member">
-            <bpmn:flowNodeRef>Activity_11swor9</bpmn:flowNodeRef>
             <bpmn:flowNodeRef>Gateway_01rehea</bpmn:flowNodeRef>
             <bpmn:flowNodeRef>Gateway_0qfwvb9</bpmn:flowNodeRef>
             <bpmn:flowNodeRef>Activity_1d8ashr</bpmn:flowNodeRef>
             <bpmn:flowNodeRef>Activity_1kovwhg</bpmn:flowNodeRef>
             <bpmn:flowNodeRef>Activity_1waw1qa</bpmn:flowNodeRef>
+            <bpmn:flowNodeRef>Activity_11swor9</bpmn:flowNodeRef>
           </bpmn:lane>
         </bpmn:childLaneSet>
       </bpmn:lane>
@@ -101,10 +105,6 @@
         <bpmn:targetRef>DataStoreReference_1nrpaje</bpmn:targetRef>
       </bpmn:dataOutputAssociation>
     </bpmn:serviceTask>
-    <bpmn:manualTask id="Activity_0cnu8tp" name="Desk Manager reads through issue">
-      <bpmn:incoming>Flow_1l9fip4</bpmn:incoming>
-      <bpmn:outgoing>Flow_1kejik1</bpmn:outgoing>
-    </bpmn:manualTask>
     <bpmn:exclusiveGateway id="Gateway_0vlvcef" name="Does the ticket need to be amended?">
       <bpmn:incoming>Flow_1kejik1</bpmn:incoming>
       <bpmn:outgoing>Flow_0i1bxgo</bpmn:outgoing>
@@ -119,13 +119,8 @@
       <bpmn:incoming>Flow_1nfgaoo</bpmn:incoming>
       <bpmn:outgoing>Flow_16s1agc</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:manualTask id="Activity_11swor9" name="Staff Member reads through ticket">
-      <bpmn:incoming>Flow_16s1agc</bpmn:incoming>
-      <bpmn:outgoing>Flow_1brofdq</bpmn:outgoing>
-    </bpmn:manualTask>
     <bpmn:exclusiveGateway id="Gateway_01rehea" name="Is additional information needed?">
       <bpmn:incoming>Flow_1brofdq</bpmn:incoming>
-      <bpmn:incoming>Flow_1y13185</bpmn:incoming>
       <bpmn:outgoing>Flow_1a4oray</bpmn:outgoing>
       <bpmn:outgoing>Flow_0osdhf5</bpmn:outgoing>
     </bpmn:exclusiveGateway>
@@ -160,14 +155,18 @@
     <bpmn:sequenceFlow id="Flow_1wv7yoo" sourceRef="Activity_1udjspl" targetRef="Activity_1yksdp1" />
     <bpmn:sequenceFlow id="Flow_1l9fip4" sourceRef="Activity_1yksdp1" targetRef="Activity_0cnu8tp" />
     <bpmn:sequenceFlow id="Flow_1kejik1" sourceRef="Activity_0cnu8tp" targetRef="Gateway_0vlvcef" />
-    <bpmn:sequenceFlow id="Flow_0i1bxgo" name="No" sourceRef="Gateway_0vlvcef" targetRef="Gateway_11d4wll" />
+    <bpmn:sequenceFlow id="Flow_0i1bxgo" name="No" sourceRef="Gateway_0vlvcef" targetRef="Gateway_11d4wll">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">#{amendSelect == 'No'}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_1nfgaoo" sourceRef="Gateway_11d4wll" targetRef="Activity_0el2kfo" />
     <bpmn:sequenceFlow id="Flow_16s1agc" sourceRef="Activity_0el2kfo" targetRef="Activity_11swor9" />
     <bpmn:sequenceFlow id="Flow_1brofdq" sourceRef="Activity_11swor9" targetRef="Gateway_01rehea" />
     <bpmn:sequenceFlow id="Flow_1a4oray" name="Yes" sourceRef="Gateway_01rehea" targetRef="Activity_1d8ashr">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">additional = "Yes"</bpmn:conditionExpression>
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">#{additionalNeeded == 'Yes'}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
-    <bpmn:sequenceFlow id="Flow_0osdhf5" name="No" sourceRef="Gateway_01rehea" targetRef="Gateway_0qfwvb9" />
+    <bpmn:sequenceFlow id="Flow_0osdhf5" name="No" sourceRef="Gateway_01rehea" targetRef="Gateway_0qfwvb9">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">#{additionalNeeded == 'No'}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_0n9fgu6" sourceRef="Activity_1rn3gw8" targetRef="Gateway_0qfwvb9" />
     <bpmn:sequenceFlow id="Flow_0yw82yc" sourceRef="Gateway_0qfwvb9" targetRef="Activity_1kovwhg" />
     <bpmn:sequenceFlow id="Flow_1rp0l05" sourceRef="Activity_1d8ashr" targetRef="Activity_1abwmdw" />
@@ -214,10 +213,12 @@
       <bpmn:outgoing>Flow_17tor35</bpmn:outgoing>
     </bpmn:exclusiveGateway>
     <bpmn:sequenceFlow id="Flow_1mx3wjg" sourceRef="Gateway_1s6d38r" targetRef="Gateway_1i1r8kv">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">evaluate = "Yes"</bpmn:conditionExpression>
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">#{evaluate == 'Yes'}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_17tor35" sourceRef="Gateway_1i1r8kv" targetRef="Activity_1bkpao6" />
-    <bpmn:sequenceFlow id="Flow_1y13185" name="End user unhappy and resolution will be reattempted" sourceRef="Gateway_1s6d38r" targetRef="Gateway_01rehea" />
+    <bpmn:sequenceFlow id="Flow_1y13185" name="End user unhappy and resolution will be reattempted" sourceRef="Gateway_1s6d38r" targetRef="Activity_11swor9">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">#{evaluate == 'Yes'}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
     <bpmn:serviceTask id="Activity_1bkpao6" name="Ticket completed" camunda:delegateExpression="#{completeTicket}">
       <bpmn:incoming>Flow_17tor35</bpmn:incoming>
       <bpmn:outgoing>Flow_1fpygsm</bpmn:outgoing>
@@ -282,8 +283,17 @@
     </bpmn:userTask>
     <bpmn:sequenceFlow id="Flow_09gc9t6" sourceRef="Activity_1709bof" targetRef="Gateway_11d4wll" />
     <bpmn:sequenceFlow id="Flow_0aicoz9" name="Yes" sourceRef="Gateway_0vlvcef" targetRef="Activity_1709bof">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">amend = "Yes"</bpmn:conditionExpression>
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">#{amendSelect == 'Yes'}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
+    <bpmn:userTask id="Activity_0cnu8tp" name="Desk Manager decides if ticket needs amending" camunda:formRef="reading" camunda:formRefBinding="deployment">
+      <bpmn:incoming>Flow_1l9fip4</bpmn:incoming>
+      <bpmn:outgoing>Flow_1kejik1</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="Activity_11swor9" name="Staff Member analyses ticket if more info needed" camunda:formRef="additionalEvaluate" camunda:formRefBinding="deployment">
+      <bpmn:incoming>Flow_16s1agc</bpmn:incoming>
+      <bpmn:incoming>Flow_1y13185</bpmn:incoming>
+      <bpmn:outgoing>Flow_1brofdq</bpmn:outgoing>
+    </bpmn:userTask>
     <bpmn:textAnnotation id="TextAnnotation_1ez3g1n">
       <bpmn:text>Confirming SLA effect/priority</bpmn:text>
     </bpmn:textAnnotation>
@@ -340,9 +350,6 @@
         <dc:Bounds x="390" y="520" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_1k3dlkx_di" bpmnElement="Activity_0cnu8tp">
-        <dc:Bounds x="390" y="810" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Gateway_0vlvcef_di" bpmnElement="Gateway_0vlvcef" isMarkerVisible="true">
         <dc:Bounds x="545" y="825" width="50" height="50" />
         <bpmndi:BPMNLabel>
@@ -354,9 +361,6 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0lo44l7_di" bpmnElement="Activity_0el2kfo">
         <dc:Bounds x="910" y="810" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_0xsnxcd_di" bpmnElement="Activity_11swor9">
-        <dc:Bounds x="910" y="1160" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Gateway_01rehea_di" bpmnElement="Gateway_01rehea" isMarkerVisible="true">
         <dc:Bounds x="1105" y="1175" width="50" height="50" />
@@ -454,6 +458,13 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_1v3kkw1_di" bpmnElement="Activity_1709bof">
         <dc:Bounds x="650" y="810" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0pa8ccr_di" bpmnElement="Activity_0cnu8tp">
+        <dc:Bounds x="390" y="810" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1dit2az_di" bpmnElement="Activity_11swor9">
+        <dc:Bounds x="910" y="1160" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="TextAnnotation_1ez3g1n_di" bpmnElement="TextAnnotation_1ez3g1n">
@@ -591,10 +602,10 @@
       <bpmndi:BPMNEdge id="Flow_1y13185_di" bpmnElement="Flow_1y13185">
         <di:waypoint x="2080" y="305" />
         <di:waypoint x="2080" y="1320" />
-        <di:waypoint x="1110" y="1320" />
-        <di:waypoint x="1110" y="1220" />
+        <di:waypoint x="960" y="1320" />
+        <di:waypoint x="960" y="1240" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="1550" y="1263" width="90" height="53" />
+          <dc:Bounds x="1535" y="1263" width="90" height="53" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1fpygsm_di" bpmnElement="Flow_1fpygsm">
@@ -658,6 +669,10 @@
         <di:waypoint x="709" y="810" />
         <di:waypoint x="714" y="790" />
       </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_01by8g4_di" bpmnElement="Association_01by8g4">
+        <di:waypoint x="398" y="889" />
+        <di:waypoint x="386" y="900" />
+      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="DataOutputAssociation_1xv4fv3_di" bpmnElement="DataOutputAssociation_1xv4fv3">
         <di:waypoint x="490" y="560" />
         <di:waypoint x="855" y="560" />
@@ -677,6 +692,10 @@
         <di:waypoint x="3040" y="240" />
         <di:waypoint x="3040" y="195" />
       </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="TextAnnotation_0e680yv_di" bpmnElement="TextAnnotation_0e680yv">
+        <dc:Bounds x="320" y="900" width="100" height="127" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
 </bpmn:definitions>

@@ -1,16 +1,6 @@
 {
   "components": [
     {
-      "text": "# Resolution satisfaction",
-      "label": "Text view",
-      "type": "text",
-      "layout": {
-        "row": "Row_0w76hfj",
-        "columns": null
-      },
-      "id": "Field_0ekkk6v"
-    },
-    {
       "label": "Ticket ID:",
       "type": "textfield",
       "layout": {
@@ -59,17 +49,6 @@
       "conditional": {
         "hide": "=evaluate = \"Yes\" or \"<none>\""
       }
-    },
-    {
-      "action": "submit",
-      "label": "Submit",
-      "type": "button",
-      "layout": {
-        "row": "Row_07e7m0e",
-        "columns": null
-      },
-      "id": "Field_0kvqy8u",
-      "key": "field_15pp65n"
     }
   ],
   "type": "default",

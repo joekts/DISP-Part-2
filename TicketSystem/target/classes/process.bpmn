@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_19ah8ed" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.21.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.20.0">
   <bpmn:collaboration id="Collaboration_1u8u2r8">
-    <bpmn:participant id="Participant_1f2ddo4" name="SME Retailer" processRef="Process_0mve9yu" />
+    <bpmn:participant id="Participant_1f2ddo4" name="SME Retailer" processRef="TicketSystem" />
   </bpmn:collaboration>
-  <bpmn:process id="Process_0mve9yu" isExecutable="true" camunda:historyTimeToLive="180">
+  <bpmn:process id="TicketSystem" name="TicketSystem Process" isExecutable="true" camunda:historyTimeToLive="180">
     <bpmn:laneSet id="LaneSet_1ta8v7h">
       <bpmn:lane id="Lane_1jjr7nu">
         <bpmn:flowNodeRef>StartEvent_1</bpmn:flowNodeRef>

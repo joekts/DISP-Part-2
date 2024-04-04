@@ -3,30 +3,27 @@
     {
       "values": [
         {
-          "label": "Employee 1",
-          "value": "employee1"
+          "label": "No",
+          "value": "No"
         },
         {
-          "label": "Employee 2",
-          "value": "employee2"
-        },
-        {
-          "label": "Employee 3",
-          "value": "employee3"
+          "label": "Yes",
+          "value": "Yes"
         }
       ],
-      "label": "Assignee",
+      "label": "Is additional information needed to resolve ticket? If selecting Yes please contact End User",
       "type": "select",
       "layout": {
-        "row": "Row_0s8pmx0",
+        "row": "Row_1ey1kfe",
         "columns": null
       },
-      "id": "Field_0japksy",
-      "key": "assignee"
+      "id": "Field_1vmhftk",
+      "key": "additionalNeeded",
+      "defaultValue": "No"
     }
   ],
   "type": "default",
-  "id": "assign",
+  "id": "Form_14g0cyb",
   "exporter": {
     "name": "Camunda Modeler",
     "version": "5.21.0"
