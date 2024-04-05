@@ -8,7 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 @Named
 public class CreateTicket implements JavaDelegate {
-    
+    @Autowired
+    private TicketRepository ticketRepository;
 
     @Override
     public void execute(DelegateExecution execution) throws Exception{
@@ -30,8 +31,23 @@ public class CreateTicket implements JavaDelegate {
         ticket.setTicketDesc(execution.getVariable("ticketDesc").toString());
         ticket.setTicketStatus("In Progress");
 
+        //Find size of database
+        Iterable<Ticket> databaseList = ticketRepository.findAll();
+        long size = 0;
+        for(Object counter: databaseList){
+            size++;
+        }
 
+        //Establish ticketID
+        long id = size + 1;
 
-        System.out.println("Success");
+        //Set ticketID
+        ticket.setID(id);
+
+        //Set variable in camunda environment
+        execution.setVariable("ticketID", id);
+
+        //Save ticket to database
+        ticketRepository.save(ticket);
     }
 }

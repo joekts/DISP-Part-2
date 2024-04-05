@@ -1,7 +1,16 @@
 package com.example.workflow.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Ticket {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long ticketID;
     private String ticketFName;
     private String ticketSurname;
     private String ticketEmail;
@@ -105,5 +114,13 @@ public class Ticket {
     }
     public void setTicketAssignee(String assignee){
         this.ticketAssignee = assignee;
+    }
+
+    //ID getter and setter
+    public Long getID() {
+        return ticketID;
+    }
+    public void setID(Long ID){
+        this.ticketID = ID;
     }
 }

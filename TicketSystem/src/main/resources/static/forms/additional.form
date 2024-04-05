@@ -1,19 +1,6 @@
 {
   "components": [
     {
-      "label": "Ticket ID:",
-      "type": "textfield",
-      "layout": {
-        "row": "Row_1eajttb",
-        "columns": null
-      },
-      "id": "Field_128zs7f",
-      "key": "additionalID",
-      "validate": {
-        "required": true
-      }
-    },
-    {
       "label": "Please detail the requested information:",
       "type": "textfield",
       "layout": {
@@ -29,7 +16,7 @@
     }
   ],
   "type": "default",
-  "id": "additional",
+  "id": "additionalInfo",
   "exporter": {
     "name": "Camunda Modeler",
     "version": "5.21.0"
