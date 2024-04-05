@@ -101,23 +101,23 @@
       "values": [
         {
           "label": "PC",
-          "value": "ticketIssuePC"
+          "value": "PC"
         },
         {
           "label": "Laptop",
-          "value": "ticketIssueLaptop"
+          "value": "Laptop"
         },
         {
           "label": "Phone",
-          "value": "ticketIssuePhone"
+          "value": "Phone"
         },
         {
           "label": "Monitor",
-          "value": "ticketIssueMonitor"
+          "value": "Monitor"
         },
         {
           "label": "Other",
-          "value": "ticketIssueOther"
+          "value": "Other"
         }
       ],
       "label": "Please select an option that best describes your issue:",
