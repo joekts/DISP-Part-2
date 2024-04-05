@@ -8,8 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 @Named
 public class CreateTicket implements JavaDelegate {
-    @Autowired
-    private TicketRepository ticketRepository;
+    
 
     @Override
     public void execute(DelegateExecution execution) throws Exception{
