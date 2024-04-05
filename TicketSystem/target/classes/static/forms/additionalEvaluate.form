@@ -1,0 +1,34 @@
+{
+  "components": [
+    {
+      "values": [
+        {
+          "label": "No",
+          "value": "No"
+        },
+        {
+          "label": "Yes",
+          "value": "Yes"
+        }
+      ],
+      "label": "Is additional information needed to resolve ticket? If selecting Yes please contact End User",
+      "type": "select",
+      "layout": {
+        "row": "Row_1ey1kfe",
+        "columns": null
+      },
+      "id": "Field_1vmhftk",
+      "key": "additionalNeeded",
+      "defaultValue": "No"
+    }
+  ],
+  "type": "default",
+  "id": "Form_14g0cyb",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.21.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.20.0",
+  "schemaVersion": 15
+}

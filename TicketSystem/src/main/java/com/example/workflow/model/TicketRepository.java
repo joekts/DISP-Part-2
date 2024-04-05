@@ -5,8 +5,4 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface TicketRepository {
 
-    public Ticket save(Ticket ticket){
-        
-    }
-
 }

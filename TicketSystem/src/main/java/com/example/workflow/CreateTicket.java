@@ -1,11 +1,15 @@
 package com.example.workflow;
 import com.example.workflow.model.Ticket;
+import com.example.workflow.model.TicketRepository;
 import jakarta.inject.Named;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Named
 public class CreateTicket implements JavaDelegate {
+    @Autowired
+    private TicketRepository ticketRepository;
 
     @Override
     public void execute(DelegateExecution execution) throws Exception{
@@ -26,6 +30,8 @@ public class CreateTicket implements JavaDelegate {
         ticket.setTicketPriority(execution.getVariable("ticketPriority").toString());
         ticket.setTicketDesc(execution.getVariable("ticketDesc").toString());
         ticket.setTicketStatus("In Progress");
+
+
 
         System.out.println("Success");
     }
