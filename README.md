@@ -10,7 +10,7 @@ SETUP INSTRUCTION:
 2. Open up http://localhost:8080/camunda/app/welcome/default/#!/login in your browser.
 3. Login to the camunda environment using, Username = demo, Password = demo.
 4. Open up the H2 console (database interface).
-5. Login using using the details in the image below:
+5. Login using using the details in the image below
 ![image](https://github.com/joekts/DISP-Part-2/assets/111279157/144a08b2-f79d-4aca-ae22-99d0475182c9)
 6. Copy and paste the SQL code in the schema.sql file in the area shown in the image below
 ![image](https://github.com/joekts/DISP-Part-2/assets/111279157/9c4bdb64-dbc8-4c4d-ba83-fbc7af3d0aeb)
