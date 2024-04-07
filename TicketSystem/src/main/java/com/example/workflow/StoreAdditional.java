@@ -4,16 +4,49 @@ import jakarta.inject.Named;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.Statement;
+
 @Named
 public class StoreAdditional implements JavaDelegate {
 
     @Override
     public void execute(DelegateExecution execution) throws Exception {
 
-        //Get additional info variable
-        String assignee = execution.getVariable("additionalInfo").toString();
+        //Database configuration variables
+        String url = "jdbc:h2:file:./camunda-h2-database";
+        String user = "";
+        String password = "";
 
-        //Using ticketID get ticket from database and update desc by adding additional
-        execution.getVariable("ticketID");
+        try {
+            // Load the H2 JDBC Driver
+            Class.forName("org.h2.Driver");
+
+            // Establish connection to the database
+            try (Connection conn = DriverManager.getConnection(url, user, password);
+                 Statement stmt = conn.createStatement()) {
+
+                // Create variable for current description
+                String currentDesc = execution.getVariable("ticketDesc").toString();
+
+                //Create variable containing current description and additional user information from form
+                String updatedDesc = currentDesc + "\n" + execution.getVariable("additionalDesc").toString();
+
+                // Create SQL query for updating ticket description
+                String sql = "UPDATE TICKET SET ticket_desc = \'" + updatedDesc + "\' WHERE ticketid = " + execution.getVariable("ticketID") + ";";
+
+                //Try statement for database connection
+                try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+                    // Execute the update
+                    pstmt.executeUpdate();
+
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -20,6 +20,7 @@ public class StoreAssignment implements JavaDelegate {
         //Get ticketID variable
         int id = (int) execution.getVariable("ticketID");
 
+        //Database configuration variables
         String url = "jdbc:h2:file:./camunda-h2-database";
         String user = "";
         String password = "";
@@ -31,12 +32,11 @@ public class StoreAssignment implements JavaDelegate {
             // Establish connection to the database
             try (Connection conn = DriverManager.getConnection(url, user, password);
                  Statement stmt = conn.createStatement()) {
-                System.out.println(execution.getVariable("ticketID"));
-                System.out.println("TESTING123456789");
 
-                // Execute a query
+                // Create SQL query for updating ticket assignee
                 String sql = "UPDATE TICKET SET ticket_assignee = \'" + assignee + "\' WHERE ticketid = " + id + ";";
 
+                //Try statement for database connection
                 try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
                     // Execute the update
