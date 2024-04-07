@@ -3,7 +3,7 @@
     {
       "values": [
         {
-          "label": "I confirm I have read through the tickket",
+          "label": "I confirm I have read through the ticket",
           "value": "readYes"
         }
       ],
@@ -42,7 +42,7 @@
     }
   ],
   "type": "default",
-  "id": "Form_0nyjww7",
+  "id": "reading",
   "exporter": {
     "name": "Camunda Modeler",
     "version": "5.21.0"

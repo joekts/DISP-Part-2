@@ -13,11 +13,21 @@ public class CreateTicket implements JavaDelegate {
 
     @Override
     public void execute(DelegateExecution execution) throws Exception{
-
         //Create ticket object
         Ticket ticket = new Ticket();
 
-        //Assign ID
+        //Find size of database
+        Iterable<Ticket> databaseList = ticketRepository.findAll();
+        int size = 0;
+        for(Object counter: databaseList){
+            size++;
+        }
+
+        //Establish ticketID
+        int id = size + 1;
+
+        //Set variable in camunda environment
+        execution.setVariable("ticketID", id);
 
         //Assign values to ticket variables from form submission
         ticket.setTicketFName(execution.getVariable("ticketFName").toString());
@@ -30,22 +40,6 @@ public class CreateTicket implements JavaDelegate {
         ticket.setTicketPriority(execution.getVariable("ticketPriority").toString());
         ticket.setTicketDesc(execution.getVariable("ticketDesc").toString());
         ticket.setTicketStatus("In Progress");
-
-        //Find size of database
-        Iterable<Ticket> databaseList = ticketRepository.findAll();
-        long size = 0;
-        for(Object counter: databaseList){
-            size++;
-        }
-
-        //Establish ticketID
-        long id = size + 1;
-
-        //Set ticketID
-        ticket.setID(id);
-
-        //Set variable in camunda environment
-        execution.setVariable("ticketID", id);
 
         //Save ticket to database
         ticketRepository.save(ticket);

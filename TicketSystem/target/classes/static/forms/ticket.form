@@ -1,6 +1,16 @@
 {
   "components": [
     {
+      "label": "Ticket ID (please leave this field empty)",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1gavefx",
+        "columns": null
+      },
+      "id": "Field_1tmgx8s",
+      "key": "ticketID"
+    },
+    {
       "label": "First Name",
       "type": "textfield",
       "layout": {
@@ -101,23 +111,23 @@
       "values": [
         {
           "label": "PC",
-          "value": "ticketIssuePC"
+          "value": "PC"
         },
         {
           "label": "Laptop",
-          "value": "ticketIssueLaptop"
+          "value": "Laptop"
         },
         {
           "label": "Phone",
-          "value": "ticketIssuePhone"
+          "value": "Phone"
         },
         {
           "label": "Monitor",
-          "value": "ticketIssueMonitor"
+          "value": "Monitor"
         },
         {
           "label": "Other",
-          "value": "ticketIssueOther"
+          "value": "Other"
         }
       ],
       "label": "Please select an option that best describes your issue:",

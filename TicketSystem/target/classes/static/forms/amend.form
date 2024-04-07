@@ -1,20 +1,6 @@
 {
   "components": [
     {
-      "label": "Ticket ID:",
-      "type": "textfield",
-      "layout": {
-        "row": "Row_0s23x9y",
-        "columns": null
-      },
-      "id": "Field_0sa1vdl",
-      "key": "amendID",
-      "validate": {
-        "required": true
-      },
-      "defaultValue": "null"
-    },
-    {
       "values": [
         {
           "label": "null",

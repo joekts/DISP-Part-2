@@ -10,7 +10,7 @@ public class Ticket {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long ticketID;
+    private int ticketID;
     private String ticketFName;
     private String ticketSurname;
     private String ticketEmail;
@@ -117,10 +117,10 @@ public class Ticket {
     }
 
     //ID getter and setter
-    public Long getID() {
+    public int getID() {
         return ticketID;
     }
-    public void setID(Long ID){
+    public void setID(int ID){
         this.ticketID = ID;
     }
 }

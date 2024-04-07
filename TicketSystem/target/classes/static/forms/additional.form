@@ -16,7 +16,7 @@
     }
   ],
   "type": "default",
-  "id": "additionalInfo",
+  "id": "additional",
   "exporter": {
     "name": "Camunda Modeler",
     "version": "5.21.0"

@@ -1,6 +1,6 @@
 -- Create TICKET table
 CREATE TABLE IF NOT EXISTS TICKET (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    ticketid BIGINT AUTO_INCREMENT PRIMARY KEY,
     ticket_assignee VARCHAR(255),
     ticket_department VARCHAR(255),
     ticket_desc TEXT,
