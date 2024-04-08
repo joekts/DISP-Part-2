@@ -21,6 +21,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -88,7 +91,7 @@
       <workItem from="1712230675789" duration="5513000" />
       <workItem from="1712315303235" duration="11214000" />
       <workItem from="1712495387403" duration="11382000" />
-      <workItem from="1712576178503" duration="3603000" />
+      <workItem from="1712576178503" duration="6657000" />
     </task>
     <servers />
   </component>

@@ -28,10 +28,8 @@ public class StoreAmendments implements JavaDelegate {
             try (Connection conn = DriverManager.getConnection(url, user, password);
                  Statement stmt = conn.createStatement()) {
 
-                // Check to see if ticket effect has been amended by desk manager
-                if (execution.getVariable("amendEffect").toString() != "null"){
                     // Create SQL query for updating ticket effect
-                    String sql = "UPDATE TICKET SET ticket_effect = \'" + execution.getVariable("amendEffect").toString() + "\' WHERE ticketid = " + execution.getVariable("ticketID") + ";";
+                    String sql = "UPDATE TICKET SET ticket_effect = \'" + execution.getVariable("ticketEffect").toString() + "\' WHERE ticketid = " + execution.getVariable("ticketID") + ";";
 
                     //Try statement for database connection
                     try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -42,10 +40,9 @@ public class StoreAmendments implements JavaDelegate {
                     }
                 }
 
-                // Check to see if ticket priority has been amended by desk manager
-                if (execution.getVariable("amendPriority").toString() != "null"){
+
                     // Create SQL query for updating ticket priority
-                    String sql = "UPDATE TICKET SET ticket_priority = \'" + execution.getVariable("amendPriority").toString() + "\' WHERE ticketid = " + execution.getVariable("ticketID") + ";";
+                    String sql = "UPDATE TICKET SET ticket_priority = \'" + execution.getVariable("ticketPriority").toString() + "\' WHERE ticketid = " + execution.getVariable("ticketID") + ";";
 
                     //Try statement for database connection
                     try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -54,7 +51,7 @@ public class StoreAmendments implements JavaDelegate {
                         pstmt.executeUpdate();
 
                     }
-                }
+
 
                 // Check to see if ticket description has been amended by desk manager
                 if (execution.getVariable("amendDesc").toString() != ""){
