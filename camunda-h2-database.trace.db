@@ -2735,3 +2735,20 @@ org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-21
 org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
 2024-04-07 22:20:25 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2024-04-08 12:38:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2024-04-08 12:55:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2024-04-08 12:56:30 jdbc[16]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TICKETS" not found; SQL statement:
+SELECT ticket_desc FROM tickets WHERE ticketid = 1; [42102-214]
+2024-04-08 12:58:22 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2024-04-08 12:59:04 jdbc[16]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No data is available [2000-214]
+2024-04-08 13:06:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2024-04-08 13:32:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2024-04-08 13:37:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]

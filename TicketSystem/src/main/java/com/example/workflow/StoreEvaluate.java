@@ -10,18 +10,17 @@ import java.sql.PreparedStatement;
 import java.sql.Statement;
 
 @Named
-public class StoreAdditional implements JavaDelegate {
+public class StoreEvaluate implements JavaDelegate {
 
     @Override
     public void execute(DelegateExecution execution) throws Exception {
-
         //Database configuration variables
         String url = "jdbc:h2:file:./camunda-h2-database";
         String user = "";
         String password = "";
 
-        // Update camunda environment ticketDesc variable to have user additional desc
-        execution.setVariable("ticketDesc", execution.getVariable("ticketDesc").toString() + "\n\nEnd user additional information:\n" + execution.getVariable("additionalDesc").toString());
+        // Update camunda environment ticketDesc variable to have user evaluate desc
+        execution.setVariable("ticketDesc", execution.getVariable("ticketDesc").toString() + "\n\nEnd user unsatisfied with resolution information:\n" + execution.getVariable("evaluateDesc").toString());
 
         // Create variable for new ticket desc
         String updatedDesc = execution.getVariable("ticketDesc").toString();

@@ -58,11 +58,11 @@ public class StoreAmendments implements JavaDelegate {
 
                 // Check to see if ticket description has been amended by desk manager
                 if (execution.getVariable("amendDesc").toString() != ""){
-                    // Create variable for current description
-                    String currentDesc = execution.getVariable("ticketDesc").toString();
 
-                    //Create variable containing current description and additional information from desk manager
-                    String updatedDesc = currentDesc + "\n" + execution.getVariable("amendDesc").toString();
+                    // Update camunda environment ticketDesc variable to have desk manager amend desc
+                    execution.setVariable("ticketDesc", execution.getVariable("ticketDesc").toString() + "\n\nDesk Manager additional information:\n" + execution.getVariable("amendDesc").toString());
+
+                    String updatedDesc = execution.getVariable("ticketDesc").toString();
 
                     // Create SQL query for updating ticket description
                     String sql = "UPDATE TICKET SET ticket_desc = \'" + updatedDesc + "\' WHERE ticketid = " + execution.getVariable("ticketID") + ";";
