@@ -20,6 +20,8 @@ public class StoreAmendments implements JavaDelegate {
         String user = "";
         String password = "";
 
+        String sql = "";
+
         try {
             // Load the H2 JDBC Driver
             Class.forName("org.h2.Driver");
@@ -29,7 +31,7 @@ public class StoreAmendments implements JavaDelegate {
                  Statement stmt = conn.createStatement()) {
 
                     // Create SQL query for updating ticket effect
-                    String sql = "UPDATE TICKET SET ticket_effect = \'" + execution.getVariable("ticketEffect").toString() + "\' WHERE ticketid = " + execution.getVariable("ticketID") + ";";
+                    sql = "UPDATE TICKET SET ticket_effect = \'" + execution.getVariable("ticketEffect").toString() + "\' WHERE ticketid = " + execution.getVariable("ticketID") + ";";
 
                     //Try statement for database connection
                     try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -38,11 +40,10 @@ public class StoreAmendments implements JavaDelegate {
                         pstmt.executeUpdate();
 
                     }
-                }
 
 
                     // Create SQL query for updating ticket priority
-                    String sql = "UPDATE TICKET SET ticket_priority = \'" + execution.getVariable("ticketPriority").toString() + "\' WHERE ticketid = " + execution.getVariable("ticketID") + ";";
+                    sql = "UPDATE TICKET SET ticket_priority = \'" + execution.getVariable("ticketPriority").toString() + "\' WHERE ticketid = " + execution.getVariable("ticketID") + ";";
 
                     //Try statement for database connection
                     try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -62,7 +63,7 @@ public class StoreAmendments implements JavaDelegate {
                     String updatedDesc = execution.getVariable("ticketDesc").toString();
 
                     // Create SQL query for updating ticket description
-                    String sql = "UPDATE TICKET SET ticket_desc = \'" + updatedDesc + "\' WHERE ticketid = " + execution.getVariable("ticketID") + ";";
+                    sql = "UPDATE TICKET SET ticket_desc = \'" + updatedDesc + "\' WHERE ticketid = " + execution.getVariable("ticketID") + ";";
 
                     //Try statement for database connection
                     try (PreparedStatement pstmt = conn.prepareStatement(sql)) {

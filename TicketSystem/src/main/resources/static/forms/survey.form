@@ -1,0 +1,23 @@
+{
+  "components": [
+    {
+      "label": "Please tell us how we did responding to your query",
+      "type": "textarea",
+      "layout": {
+        "row": "Row_0318i2n",
+        "columns": null
+      },
+      "id": "Field_13ol15v",
+      "key": "surveyResponse"
+    }
+  ],
+  "type": "default",
+  "id": "survey",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.17.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.20.0",
+  "schemaVersion": 12
+}

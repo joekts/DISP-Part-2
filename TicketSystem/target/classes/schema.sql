@@ -13,3 +13,8 @@ CREATE TABLE IF NOT EXISTS TICKET (
     ticket_status VARCHAR(50),
     ticket_surname VARCHAR(255)
 );
+-- Create SURVEY Table
+CREATE TABLE IF NOT EXISTS SURVEY (
+    surveyID BIGINT AUTO_INCREMENT PRIMARY KEY,
+    survey_response TEXT
+);

@@ -26,7 +26,7 @@
         "columns": null
       },
       "id": "Field_0uof0bq",
-      "key": "amendEffect",
+      "key": "ticketEffect",
       "validate": {
         "required": true
       },
@@ -58,7 +58,7 @@
         "columns": null
       },
       "id": "Field_0u2fy5c",
-      "key": "amendPriority",
+      "key": "ticketPriority",
       "validate": {
         "required": true
       },
