@@ -13,7 +13,7 @@ public class CreateSurvey implements JavaDelegate {
 
     @Override
     public void execute(DelegateExecution execution) throws Exception{
-        //Create ticket object
+        //Create survey object
         Survey survey = new Survey();
 
         //Find size of database
@@ -24,16 +24,16 @@ public class CreateSurvey implements JavaDelegate {
             size++;
         }
 
-        //Establish ticketID
+        //Establish surveyID
         int id = size + 1;
 
         //Set variable in camunda environment
         execution.setVariable("surveyID", id);
 
-        //Assign values to ticket variables from form submission
+        //Assign values to survey variables from form submission
         survey.setSurveyResponse(execution.getVariable("surveyResponse").toString());
 
-        //Save ticket to database
+        //Save survey to database
         surveyRepository.save(survey);
     }
 }
