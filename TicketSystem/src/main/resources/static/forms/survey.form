@@ -8,16 +8,19 @@
         "columns": null
       },
       "id": "Field_13ol15v",
-      "key": "surveyResponse"
+      "key": "surveyResponse",
+      "validate": {
+        "required": true
+      }
     }
   ],
   "type": "default",
   "id": "survey",
   "exporter": {
     "name": "Camunda Modeler",
-    "version": "5.17.0"
+    "version": "5.19.0"
   },
   "executionPlatform": "Camunda Platform",
   "executionPlatformVersion": "7.20.0",
-  "schemaVersion": 12
+  "schemaVersion": 14
 }

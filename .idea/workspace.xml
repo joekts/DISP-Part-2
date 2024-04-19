@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="edb1eb63-29ff-4944-ae96-9272cf8847e4" name="Changes" comment="" />
+    <list default="true" id="edb1eb63-29ff-4944-ae96-9272cf8847e4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TicketSystem/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TicketSystem/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TicketSystem/src/main/resources/process.bpmn" beforeDir="false" afterPath="$PROJECT_DIR$/TicketSystem/src/main/resources/process.bpmn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TicketSystem/src/main/resources/static/forms/survey.form" beforeDir="false" afterPath="$PROJECT_DIR$/TicketSystem/src/main/resources/static/forms/survey.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TicketSystem/target/classes/static/forms/survey.form" beforeDir="false" afterPath="$PROJECT_DIR$/TicketSystem/target/classes/static/forms/survey.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/camunda-h2-database.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/camunda-h2-database.mv.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/camunda-h2-database.trace.db" beforeDir="false" afterPath="$PROJECT_DIR$/camunda-h2-database.trace.db" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,6 +31,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -74,7 +85,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
       </set>
     </attachedChunks>
   </component>
@@ -92,6 +104,7 @@
       <workItem from="1712315303235" duration="11214000" />
       <workItem from="1712495387403" duration="11382000" />
       <workItem from="1712576178503" duration="6657000" />
+      <workItem from="1713531934558" duration="10336000" />
     </task>
     <servers />
   </component>
