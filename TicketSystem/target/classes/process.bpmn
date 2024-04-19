@@ -73,9 +73,9 @@
         <bpmn:flowNodeRef>Event_0c4mdb2</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_1qyibvt</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_1yksdp1</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Activity_1s7e0ac</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_1jvneu7</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_1nbgvmr</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_1s7e0ac</bpmn:flowNodeRef>
         <bpmn:childLaneSet id="LaneSet_1hyle9z">
           <bpmn:lane id="Lane_1ehl873" name="IT System">
             <bpmn:flowNodeRef>Activity_1bkpao6</bpmn:flowNodeRef>
@@ -320,13 +320,6 @@
         <bpmn:targetRef>DataStoreReference_1nrpaje</bpmn:targetRef>
       </bpmn:dataOutputAssociation>
     </bpmn:serviceTask>
-    <bpmn:userTask id="Activity_1s7e0ac" name="Completed survey is sent to database">
-      <bpmn:incoming>Flow_1j9o4d1</bpmn:incoming>
-      <bpmn:outgoing>Flow_0ys1pu9</bpmn:outgoing>
-      <bpmn:dataOutputAssociation id="DataOutputAssociation_1tql9m7">
-        <bpmn:targetRef>DataStoreReference_0sc4535</bpmn:targetRef>
-      </bpmn:dataOutputAssociation>
-    </bpmn:userTask>
     <bpmn:sequenceFlow id="Flow_0axaope" sourceRef="Activity_1jvneu7" targetRef="Gateway_08t0cw7" />
     <bpmn:serviceTask id="Activity_1jvneu7" name="Survey Created and sent" camunda:delegateExpression="#{createSurvey}">
       <bpmn:incoming>Flow_1g9zz6e</bpmn:incoming>
@@ -338,6 +331,13 @@
       <bpmn:outgoing>Flow_1g9zz6e</bpmn:outgoing>
     </bpmn:userTask>
     <bpmn:sequenceFlow id="Flow_1g9zz6e" sourceRef="Activity_1nbgvmr" targetRef="Activity_1jvneu7" />
+    <bpmn:serviceTask id="Activity_1s7e0ac" name="Completed survey is sent to database" camunda:delegateExpression="#{storeSurvey}">
+      <bpmn:incoming>Flow_1j9o4d1</bpmn:incoming>
+      <bpmn:outgoing>Flow_0ys1pu9</bpmn:outgoing>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_1tql9m7">
+        <bpmn:targetRef>DataStoreReference_0sc4535</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+    </bpmn:serviceTask>
   </bpmn:process>
   <bpmn:message id="Message_051bv0j" name="SurveySent" />
   <bpmn:message id="Message_32m6qkc" name="EndUserAnswers" />
@@ -506,9 +506,6 @@
           <dc:Bounds x="2850" y="300" width="89" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_14ulbr5_di" bpmnElement="Activity_1s7e0ac">
-        <dc:Bounds x="2986" y="235" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_00dsj9p_di" bpmnElement="Activity_1jvneu7">
         <dc:Bounds x="2600" y="515" width="100" height="80" />
         <bpmndi:BPMNLabel />
@@ -516,6 +513,9 @@
       <bpmndi:BPMNShape id="Activity_0n204ae_di" bpmnElement="Activity_1nbgvmr">
         <dc:Bounds x="2460" y="515" width="100" height="80" />
         <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0lvx0uz_di" bpmnElement="Activity_1s7e0ac">
+        <dc:Bounds x="2986" y="235" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_07hablw_di" bpmnElement="Event_07hablw">
         <dc:Bounds x="1278" y="217" width="36" height="36" />
