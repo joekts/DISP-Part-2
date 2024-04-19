@@ -21,6 +21,6 @@
     "version": "5.19.0"
   },
   "executionPlatform": "Camunda Platform",
-  "executionPlatformVersion": "7.20.0",
+  "executionPlatformVersion": "7.21.0",
   "schemaVersion": 14
 }

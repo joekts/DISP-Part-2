@@ -73,8 +73,8 @@
         <bpmn:flowNodeRef>Event_0c4mdb2</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_1qyibvt</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_1yksdp1</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Event_1pdxw6x</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Activity_01bh9bp</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_1jvneu7</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_1nbgvmr</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_1s7e0ac</bpmn:flowNodeRef>
         <bpmn:childLaneSet id="LaneSet_1hyle9z">
           <bpmn:lane id="Lane_1ehl873" name="IT System">
@@ -91,8 +91,8 @@
             <bpmn:flowNodeRef>Gateway_08t0cw7</bpmn:flowNodeRef>
             <bpmn:flowNodeRef>Event_0c4mdb2</bpmn:flowNodeRef>
             <bpmn:flowNodeRef>Activity_1yksdp1</bpmn:flowNodeRef>
-            <bpmn:flowNodeRef>Event_1pdxw6x</bpmn:flowNodeRef>
-            <bpmn:flowNodeRef>Activity_01bh9bp</bpmn:flowNodeRef>
+            <bpmn:flowNodeRef>Activity_1jvneu7</bpmn:flowNodeRef>
+            <bpmn:flowNodeRef>Activity_1nbgvmr</bpmn:flowNodeRef>
           </bpmn:lane>
           <bpmn:lane id="Lane_1ns96fh" name="End USer">
             <bpmn:flowNodeRef>StartEvent_1</bpmn:flowNodeRef>
@@ -163,7 +163,7 @@
     </bpmn:exclusiveGateway>
     <bpmn:serviceTask id="Activity_1bkpao6" name="Ticket completed" camunda:delegateExpression="#{completeTicket}">
       <bpmn:incoming>Flow_1mx3wjg</bpmn:incoming>
-      <bpmn:outgoing>Flow_0v7rlhm</bpmn:outgoing>
+      <bpmn:outgoing>Flow_1a5x28d</bpmn:outgoing>
       <bpmn:dataOutputAssociation id="DataOutputAssociation_1xk6nqj">
         <bpmn:targetRef>DataStoreReference_1nrpaje</bpmn:targetRef>
       </bpmn:dataOutputAssociation>
@@ -296,7 +296,7 @@
       </bpmn:dataOutputAssociation>
     </bpmn:serviceTask>
     <bpmn:eventBasedGateway id="Gateway_08t0cw7" name="End user completes or ignores the survey">
-      <bpmn:incoming>Flow_15to1gm</bpmn:incoming>
+      <bpmn:incoming>Flow_0axaope</bpmn:incoming>
       <bpmn:outgoing>Flow_0u2l9lt</bpmn:outgoing>
       <bpmn:outgoing>Flow_0q5meuy</bpmn:outgoing>
     </bpmn:eventBasedGateway>
@@ -320,19 +320,18 @@
         <bpmn:targetRef>DataStoreReference_1nrpaje</bpmn:targetRef>
       </bpmn:dataOutputAssociation>
     </bpmn:serviceTask>
-    <bpmn:sequenceFlow id="Flow_0v7rlhm" sourceRef="Activity_1bkpao6" targetRef="Event_1pdxw6x" />
-    <bpmn:intermediateThrowEvent id="Event_1pdxw6x" name="Survey sent to end user">
-      <bpmn:incoming>Flow_0v7rlhm</bpmn:incoming>
-      <bpmn:outgoing>Flow_1ed1ish</bpmn:outgoing>
-      <bpmn:messageEventDefinition id="MessageEventDefinition_1oskmjr" />
-    </bpmn:intermediateThrowEvent>
-    <bpmn:sequenceFlow id="Flow_1ed1ish" sourceRef="Event_1pdxw6x" targetRef="Activity_01bh9bp" />
-    <bpmn:userTask id="Activity_01bh9bp" name="End user answers survey" camunda:formRef="survey" camunda:formRefBinding="deployment">
-      <bpmn:incoming>Flow_1ed1ish</bpmn:incoming>
-      <bpmn:outgoing>Flow_15to1gm</bpmn:outgoing>
+    <bpmn:sequenceFlow id="Flow_0axaope" sourceRef="Activity_1jvneu7" targetRef="Gateway_08t0cw7" />
+    <bpmn:serviceTask id="Activity_1jvneu7" name="Survey Created and sent" camunda:delegateExpression="#{createSurvey}">
+      <bpmn:incoming>Flow_1g9zz6e</bpmn:incoming>
+      <bpmn:outgoing>Flow_0axaope</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_1a5x28d" sourceRef="Activity_1bkpao6" targetRef="Activity_1nbgvmr" />
+    <bpmn:userTask id="Activity_1nbgvmr" name="survey" camunda:formRef="survey" camunda:formRefBinding="latest">
+      <bpmn:incoming>Flow_1a5x28d</bpmn:incoming>
+      <bpmn:outgoing>Flow_1g9zz6e</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:sequenceFlow id="Flow_15to1gm" sourceRef="Activity_01bh9bp" targetRef="Gateway_08t0cw7" />
-    <bpmn:serviceTask id="Activity_1s7e0ac" name="Completed survey is saved to database" camunda:delegateExpression="#{storeSurvey}">
+    <bpmn:sequenceFlow id="Flow_1g9zz6e" sourceRef="Activity_1nbgvmr" targetRef="Activity_1jvneu7" />
+    <bpmn:serviceTask id="Activity_1s7e0ac" name="Completed survey is sent to database" camunda:delegateExpression="#{storeSurvey}">
       <bpmn:incoming>Flow_1j9o4d1</bpmn:incoming>
       <bpmn:outgoing>Flow_0ys1pu9</bpmn:outgoing>
       <bpmn:dataOutputAssociation id="DataOutputAssociation_1tql9m7">
@@ -507,19 +506,16 @@
           <dc:Bounds x="2850" y="300" width="89" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_03vy8qm_di" bpmnElement="Event_1pdxw6x">
-        <dc:Bounds x="2492" y="537" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="2475" y="580" width="71" height="27" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_1tjshyq_di" bpmnElement="Activity_01bh9bp">
-        <dc:Bounds x="2590" y="515" width="100" height="80" />
+      <bpmndi:BPMNShape id="Activity_00dsj9p_di" bpmnElement="Activity_1jvneu7">
+        <dc:Bounds x="2600" y="515" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_0t8nlad_di" bpmnElement="Activity_1s7e0ac">
+      <bpmndi:BPMNShape id="Activity_0n204ae_di" bpmnElement="Activity_1nbgvmr">
+        <dc:Bounds x="2460" y="515" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0lvx0uz_di" bpmnElement="Activity_1s7e0ac">
         <dc:Bounds x="2986" y="235" width="100" height="80" />
-        <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_07hablw_di" bpmnElement="Event_07hablw">
         <dc:Bounds x="1278" y="217" width="36" height="36" />
@@ -662,9 +658,8 @@
         <di:waypoint x="1010" y="1155" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_01a55sm_di" bpmnElement="Flow_01a55sm">
-        <di:waypoint x="2026" y="495" />
-        <di:waypoint x="1410" y="495" />
-        <di:waypoint x="1410" y="1310" />
+        <di:waypoint x="2076" y="535" />
+        <di:waypoint x="2076" y="1310" />
         <di:waypoint x="1010" y="1310" />
         <di:waypoint x="1010" y="1235" />
       </bpmndi:BPMNEdge>
@@ -701,17 +696,17 @@
         <di:waypoint x="676" y="805" />
         <di:waypoint x="676" y="680" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_0v7rlhm_di" bpmnElement="Flow_0v7rlhm">
-        <di:waypoint x="2416" y="555" />
-        <di:waypoint x="2492" y="555" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_1ed1ish_di" bpmnElement="Flow_1ed1ish">
-        <di:waypoint x="2528" y="555" />
-        <di:waypoint x="2590" y="555" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_15to1gm_di" bpmnElement="Flow_15to1gm">
-        <di:waypoint x="2690" y="555" />
+      <bpmndi:BPMNEdge id="Flow_0axaope_di" bpmnElement="Flow_0axaope">
+        <di:waypoint x="2700" y="555" />
         <di:waypoint x="2745" y="555" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1a5x28d_di" bpmnElement="Flow_1a5x28d">
+        <di:waypoint x="2416" y="555" />
+        <di:waypoint x="2460" y="555" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1g9zz6e_di" bpmnElement="Flow_1g9zz6e">
+        <di:waypoint x="2560" y="555" />
+        <di:waypoint x="2600" y="555" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="TextAnnotation_0e680yv_di" bpmnElement="TextAnnotation_0e680yv">
         <dc:Bounds x="386" y="910" width="100" height="127" />

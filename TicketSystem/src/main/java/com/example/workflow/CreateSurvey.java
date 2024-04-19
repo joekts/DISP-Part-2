@@ -7,32 +7,33 @@ import org.camunda.bpm.engine.delegate.JavaDelegate;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @Named
-public class SendSurvey implements JavaDelegate {
+public class CreateSurvey implements JavaDelegate {
     @Autowired
     private SurveyRepository surveyRepository;
 
     @Override
     public void execute(DelegateExecution execution) throws Exception{
-        //Create Survey object
-        Survey Survey = new Survey();
+        //Create ticket object
+        Survey survey = new Survey();
 
         //Find size of database
-        Iterable<Survey> SurveyDatabaseList = surveyRepository.findAll();
+        Iterable<Survey> databaseList = surveyRepository.findAll();
+
         int size = 0;
-        for(Object survey: SurveyDatabaseList){
+        for(Object counter: databaseList){
             size++;
         }
 
-        //Establish SurveyID
-        int generatedSurveyId = size + 1;
+        //Establish ticketID
+        int id = size + 1;
 
         //Set variable in camunda environment
-        execution.setVariable("surveyID", generatedSurveyId);
+        execution.setVariable("surveyID", id);
 
-        //Assign values to Survey variables from form submission
-        Survey.setSurveyResponse(execution.getVariable("surveyResponse").toString());
+        //Assign values to ticket variables from form submission
+        survey.setSurveyResponse(execution.getVariable("surveyResponse").toString());
 
-        //Save Survey to database
-        surveyRepository.save(Survey);
+        //Save ticket to database
+        surveyRepository.save(survey);
     }
 }
