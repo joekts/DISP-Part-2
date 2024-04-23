@@ -22,16 +22,20 @@
         "columns": null
       },
       "id": "Field_0japksy",
-      "key": "assignee"
+      "key": "assignee",
+      "validate": {
+        "required": true
+      },
+      "properties": {}
     }
   ],
   "type": "default",
   "id": "assign",
   "exporter": {
     "name": "Camunda Modeler",
-    "version": "5.21.0"
+    "version": "5.17.0"
   },
   "executionPlatform": "Camunda Platform",
   "executionPlatformVersion": "7.20.0",
-  "schemaVersion": 15
+  "schemaVersion": 12
 }

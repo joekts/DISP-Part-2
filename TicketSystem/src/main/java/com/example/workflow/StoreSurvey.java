@@ -22,6 +22,8 @@ public class StoreSurvey implements JavaDelegate{
         String sql_survey;
 
         String surveyResponse = execution.getVariable("surveyResponse").toString();
+        //Get ticketID variable
+        String ticketid = execution.getVariable("ticketID").toString();
 
         try {
             // Load the H2 JDBC Driver
@@ -30,18 +32,17 @@ public class StoreSurvey implements JavaDelegate{
             // Establish connection to the database
             try (Connection conn = DriverManager.getConnection(url, user, password);
                  Statement stmt = conn.createStatement()) {
+                // Create SQL query for Updating survey table with survey response
+                sql_survey = "UPDATE SURVEY SET survey_response = \'" + surveyResponse + "\', ticketid = \'" + ticketid + "\' WHERE surveyID = " + execution.getVariable("surveyID") + ";";
 
-                    // Create SQL query for Updating survey table with survey response
-                    sql_survey = "UPDATE SURVEY SET survey_response = \'" + surveyResponse + "\' WHERE surveyID = " + execution.getVariable("surveyID") + ";";
+                //Try statement for database connection
+                try (PreparedStatement pstmt = conn.prepareStatement(sql_survey)) {
 
-                    //Try statement for database connection
-                    try (PreparedStatement pstmt = conn.prepareStatement(sql_survey)) {
+                    // Execute the update
+                    pstmt.executeUpdate();
 
-                        // Execute the update
-                        pstmt.executeUpdate();
-
-                    }
                 }
+            }
         }
         catch (Exception e) {
             e.printStackTrace();
