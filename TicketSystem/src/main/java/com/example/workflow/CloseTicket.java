@@ -28,7 +28,7 @@ public class CloseTicket implements JavaDelegate {
                  Statement stmt = conn.createStatement()) {
 
                 // Create SQL query for updating ticket status
-                String sql = "UPDATE TICKET SET ticket_status = \'Closed\' WHERE ticketid = " + execution.getVariable("Closed") + ";";
+                String sql = "UPDATE TICKET SET ticket_status = \'Closed\' WHERE ticketid = " + execution.getVariable("ticketID") + ";";
 
                 //Try statement for database connection
                 try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
