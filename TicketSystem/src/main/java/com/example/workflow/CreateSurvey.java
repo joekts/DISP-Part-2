@@ -33,6 +33,8 @@ public class CreateSurvey implements JavaDelegate {
         //Assign values to survey variables from form submission
         survey.setSurveyResponse(execution.getVariable("surveyResponse").toString());
 
+        survey.setSurveyTicketID((Integer) execution.getVariable("ticketID"));
+
         //Save survey to database
         surveyRepository.save(survey);
     }

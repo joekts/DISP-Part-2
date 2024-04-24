@@ -17,6 +17,6 @@ CREATE TABLE IF NOT EXISTS TICKET (
 CREATE TABLE IF NOT EXISTS SURVEY (
     surveyID BIGINT AUTO_INCREMENT PRIMARY KEY,
     survey_response TEXT,
-    ticketid BIGINT,
-    foreign key(ticketid) references TICKET (ticketid)
+    survey_ticketid BIGINT,
+    FOREIGN KEY (survey_ticketid) REFERENCES TICKET (ticketid)
 );

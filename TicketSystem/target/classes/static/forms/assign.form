@@ -25,7 +25,8 @@
       "key": "assignee",
       "validate": {
         "required": true
-      }
+      },
+      "properties": {}
     }
   ],
   "type": "default",

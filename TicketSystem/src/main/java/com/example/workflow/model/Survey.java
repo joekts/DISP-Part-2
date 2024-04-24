@@ -11,6 +11,7 @@ public class Survey {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int surveyID;
     private String surveyResponse;
+    private int surveyTicketID;
 
     // Getter and setter for surveyId
     public int getSurveyId() {
@@ -26,5 +27,13 @@ public class Survey {
 
     public void setSurveyResponse(String surveyResponse) {
         this.surveyResponse = surveyResponse;
+    }
+
+    public int getSurveyTicketID(){
+        return this.surveyTicketID;
+    }
+
+    public void setSurveyTicketID(int id){
+        this.surveyTicketID = id;
     }
 }
