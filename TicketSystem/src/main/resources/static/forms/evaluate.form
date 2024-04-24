@@ -36,9 +36,7 @@
       "conditional": {
         "hide": "=evaluate = \"Yes\" or \"<none>\""
       },
-      "validate": {
-        "pattern": "^[\\.a-zA-Z,!? ]*$"
-      }
+      "validate": {}
     }
   ],
   "type": "default",

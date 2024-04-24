@@ -11,8 +11,7 @@
       "key": "additionalDesc",
       "validate": {
         "required": true,
-        "minLength": 10,
-        "pattern": "^[\\.a-zA-Z,!? ]*$"
+        "minLength": 10
       }
     }
   ],
