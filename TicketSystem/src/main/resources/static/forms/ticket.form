@@ -199,8 +199,7 @@
       "id": "Field_1pe4jfk",
       "key": "ticketDesc",
       "validate": {
-        "required": true,
-        "pattern": "^[\\.a-zA-Z,!? ]*$"
+        "required": true
       }
     }
   ],
