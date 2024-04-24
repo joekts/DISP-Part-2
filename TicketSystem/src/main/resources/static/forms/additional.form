@@ -11,7 +11,8 @@
       "key": "additionalDesc",
       "validate": {
         "required": true,
-        "minLength": 10
+        "minLength": 10,
+        "pattern": "^[\\.a-zA-Z,!? ]*$"
       }
     }
   ],
@@ -19,9 +20,9 @@
   "id": "additional",
   "exporter": {
     "name": "Camunda Modeler",
-    "version": "5.21.0"
+    "version": "5.17.0"
   },
   "executionPlatform": "Camunda Platform",
   "executionPlatformVersion": "7.19.0",
-  "schemaVersion": 15
+  "schemaVersion": 12
 }

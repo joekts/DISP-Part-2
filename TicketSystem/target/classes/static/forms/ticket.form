@@ -12,7 +12,8 @@
       "validate": {
         "required": true,
         "maxLength": 20,
-        "minLength": 2
+        "minLength": 2,
+        "pattern": "^[\\.a-zA-Z,!? ]*$"
       }
     },
     {
@@ -27,7 +28,8 @@
       "validate": {
         "required": true,
         "minLength": 2,
-        "maxLength": 50
+        "maxLength": 50,
+        "pattern": "^[\\.a-zA-Z,!? ]*$"
       }
     },
     {
@@ -196,7 +198,8 @@
       "id": "Field_1pe4jfk",
       "key": "ticketDesc",
       "validate": {
-        "required": true
+        "required": true,
+        "pattern": "^[\\.a-zA-Z,!? ]*$"
       }
     }
   ],
@@ -204,9 +207,9 @@
   "id": "ticket",
   "exporter": {
     "name": "Camunda Modeler",
-    "version": "5.21.0"
+    "version": "5.19.0"
   },
   "executionPlatform": "Camunda Platform",
   "executionPlatformVersion": "7.20.0",
-  "schemaVersion": 15
+  "schemaVersion": 14
 }

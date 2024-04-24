@@ -132,7 +132,8 @@
       "key": "ticketIssue",
       "validate": {
         "required": false
-      }
+      },
+      "properties": {}
     },
     {
       "values": [
@@ -207,9 +208,9 @@
   "id": "ticket",
   "exporter": {
     "name": "Camunda Modeler",
-    "version": "5.19.0"
+    "version": "5.17.0"
   },
   "executionPlatform": "Camunda Platform",
   "executionPlatformVersion": "7.20.0",
-  "schemaVersion": 14
+  "schemaVersion": 12
 }
