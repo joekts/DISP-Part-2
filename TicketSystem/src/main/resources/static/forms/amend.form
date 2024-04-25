@@ -72,16 +72,19 @@
         "columns": null
       },
       "id": "Field_0qwklzh",
-      "key": "amendDesc"
+      "key": "amendDesc",
+      "validate": {
+        "pattern": "^[\\.a-zA-Z0-9,!? ]*$"
+      }
     }
   ],
   "type": "default",
   "id": "amend",
   "exporter": {
     "name": "Camunda Modeler",
-    "version": "5.21.0"
+    "version": "5.17.0"
   },
   "executionPlatform": "Camunda Platform",
   "executionPlatformVersion": "7.20.0",
-  "schemaVersion": 15
+  "schemaVersion": 12
 }

@@ -35,16 +35,17 @@
       "key": "evaluateDesc",
       "conditional": {
         "hide": "=evaluate = \"Yes\" or \"<none>\""
-      }
+      },
+      "validate": {}
     }
   ],
   "type": "default",
   "id": "evaluate",
   "exporter": {
     "name": "Camunda Modeler",
-    "version": "5.21.0"
+    "version": "5.17.0"
   },
   "executionPlatform": "Camunda Platform",
   "executionPlatformVersion": "7.19.0",
-  "schemaVersion": 15
+  "schemaVersion": 12
 }
