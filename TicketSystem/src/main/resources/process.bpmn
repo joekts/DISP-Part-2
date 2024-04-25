@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_19ah8ed" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.20.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.20.0">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_19ah8ed" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.21.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.20.0">
   <bpmn:collaboration id="Collaboration_1u8u2r8">
     <bpmn:extensionElements />
     <bpmn:participant id="Participant_1f2ddo4" name="SME Retailer" processRef="TicketSystem" />
@@ -289,6 +289,9 @@
     <bpmn:serviceTask id="Activity_1jvneu7" name="Survey created and stored in database" camunda:delegateExpression="#{createSurvey}">
       <bpmn:incoming>Flow_1g9zz6e</bpmn:incoming>
       <bpmn:outgoing>Flow_0756v6k</bpmn:outgoing>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_0mvf150">
+        <bpmn:targetRef>DataStoreReference_1absnla</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
     </bpmn:serviceTask>
     <bpmn:endEvent id="Event_1uqgaqy" name="Issue resolved">
       <bpmn:incoming>Flow_0756v6k</bpmn:incoming>
@@ -296,6 +299,7 @@
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="Flow_0756v6k" sourceRef="Activity_1jvneu7" targetRef="Event_1uqgaqy" />
     <bpmn:sequenceFlow id="Flow_0jz1xvh" name="14 day timer for if user ignores survey" sourceRef="Event_10wrtsh" targetRef="Event_1uqgaqy" />
+    <bpmn:dataStoreReference id="DataStoreReference_1absnla" name="Survey database" />
   </bpmn:process>
   <bpmn:message id="Message_051bv0j" name="SurveySent" />
   <bpmn:message id="Message_32m6qkc" name="EndUserAnswers" />
@@ -442,6 +446,15 @@
           <dc:Bounds x="2914" y="585" width="72" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="DataStoreReference_1absnla_di" bpmnElement="DataStoreReference_1absnla">
+        <dc:Bounds x="2625" y="530" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2609" y="587" width="83" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_10wrtsh_di" bpmnElement="Event_10wrtsh">
+        <dc:Bounds x="2542" y="217" width="36" height="36" />
+      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_07hablw_di" bpmnElement="Event_07hablw">
         <dc:Bounds x="1278" y="217" width="36" height="36" />
         <bpmndi:BPMNLabel>
@@ -453,9 +466,6 @@
         <bpmndi:BPMNLabel>
           <dc:Bounds x="1875" y="188" width="41" height="14" />
         </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_10wrtsh_di" bpmnElement="Event_10wrtsh">
-        <dc:Bounds x="2542" y="217" width="36" height="36" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_1ssgrfu_di" bpmnElement="Flow_1ssgrfu">
         <di:waypoint x="334" y="275" />
@@ -668,6 +678,10 @@
       <bpmndi:BPMNEdge id="Association_0pk8lzu_di" bpmnElement="Association_0pk8lzu">
         <di:waypoint x="726" y="845" />
         <di:waypoint x="760" y="845" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="DataOutputAssociation_0mvf150_di" bpmnElement="DataOutputAssociation_0mvf150">
+        <di:waypoint x="2720" y="558" />
+        <di:waypoint x="2675" y="556" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
