@@ -74,7 +74,7 @@
       "id": "Field_0qwklzh",
       "key": "amendDesc",
       "validate": {
-        "pattern": "^[\\.a-zA-Z,!? ]*$"
+        "pattern": "^[\\.a-zA-Z0-9,!? ]*$"
       }
     }
   ],
